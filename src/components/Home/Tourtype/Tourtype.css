@@ -1,0 +1,36 @@
+.tour-type{
+    width: 450px;
+    max-width: 90%;
+    text-align: left;
+    padding-right: 30px;
+}
+.tour-type img{
+    margin-right: 15px;
+    margin-top: 10px;
+}
+
+.tour-heading{
+    font-weight: 700;
+    color: rgb(77, 8, 8);
+    
+}
+
+.view-btn{
+    text-decoration: none;
+    text-transform: uppercase;
+    font-size: .7rem;
+    letter-spacing: 3px;
+    color: cornflowerblue;
+    transition: .3s letter-spacing;
+
+}
+.view-btn:hover{
+    letter-spacing: 5px;
+    color: rgb(77, 8, 8) ;
+}
+
+@media only  screen and (max-width:768px) {
+    .tour-type{
+        padding-right: 0;
+    }
+}

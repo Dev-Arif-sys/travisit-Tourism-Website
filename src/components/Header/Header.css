@@ -6,3 +6,13 @@
 .logo-part{
     color: rgb(236, 81, 81);
 }
+
+.sign-btn{
+    background-color: rgb(236, 81, 81);
+    color: white !important;
+    border-radius: 20px;
+    padding: .5em 1.4em !important;
+}
+.sign-btn:hover{
+    background-color: rgb(25, 110, 25);
+}
