@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { useForm } from 'react-hook-form';
-import { useParams } from 'react-router';
+import { useHistory, useParams } from 'react-router';
 import UseAuth from '../../Hooks/UseAuth';
 import './Book.css'
 
@@ -12,7 +12,7 @@ const Book = () => {
     const { id } = useParams()
 
     useEffect(() => {
-        fetch(`http://localhost:5000/tours/${id}`)
+        fetch(`https://immense-hamlet-03425.herokuapp.com/tours/${id}`)
             .then(res => res.json())
             .then(data => {
                 setTour(data)
@@ -21,9 +21,11 @@ const Book = () => {
 
 
     const { register, handleSubmit,reset } = useForm();
+    const history=useHistory();
     const onSubmit = data => {
-        data['tourId']=id;
-        fetch(`http://localhost:5000/booking`,{
+        data['tourKey']=tour.key;
+        data['status']='pending'
+        fetch(`https://immense-hamlet-03425.herokuapp.com/booking`,{
             method:"POST",
             headers:{
                 "content-type":"application/json"
@@ -35,7 +37,9 @@ const Book = () => {
            
             if(data.insertedId){
                 alert('your booking is done successfully')
+                history.push('/myBooking')
                 reset();
+               
             }
         })
 

@@ -1,7 +1,10 @@
 import React from 'react';
+import UseAuth from '../../../Hooks/UseAuth';
 import './Banner.css'
 
 const Banner = () => {
+    const {user}=UseAuth();
+   
     return (
         <div className='banner'>
          <div className='d-flex justify-content-center align-items-center h-100'>

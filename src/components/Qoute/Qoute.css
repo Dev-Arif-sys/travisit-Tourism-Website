@@ -1,0 +1,21 @@
+.qoute{
+      min-height:200px;
+    background:linear-gradient(0deg, rgba(255, 0, 150, 0.3), rgba(255, 0, 150, 0.3)), url(https://i.ibb.co/dGsZ1rD/edgar-chaparro-7-HDi-Ek-G11-I-unsplash.jpg);
+    background-size:cover;
+    background-position: center;
+    background-attachment: fixed;
+}
+.qoute div{
+    display: flex;
+    justify-content: center;
+    height: 200px;
+    width: 60%;
+    margin: 0 auto;
+    align-items: center;
+    
+}
+.qoute div h5{
+    font-size: 1.5rem;
+    color: white;
+
+}

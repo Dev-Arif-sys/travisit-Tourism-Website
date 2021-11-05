@@ -1,5 +1,7 @@
 .footer-container{
-    position: relative;
+    
+
+     margin-top: auto;
 }
 .footer{
     background-color: #110235;
@@ -7,9 +9,9 @@
     padding: 30px;
     padding-top: 50px;
    
-    position: absolute;
-    width: 100%;
-    z-index: 3;
+   
+     /* Height of the footer */
+
     text-align: left;
    
 

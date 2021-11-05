@@ -6,22 +6,22 @@ import authenticationINIT from "../Firebase/Firebase.init";
 authenticationINIT();
 const UseFirebase=()=>{
      const [user,setUser]=useState(null)
+     const [isLoading,setLoading]=useState(true)
 
     const googleProvider= new GoogleAuthProvider();
     const auth=getAuth();
 
     const signinWithGoogle=()=>{
-        signInWithPopup(auth,googleProvider)
-        .then(result=>{
-            const user=result.user;
-            console.log(user)
-        })
+        setLoading(true)
+       return  signInWithPopup(auth,googleProvider)
+       
     }
 
     useEffect(()=>{
         onAuthStateChanged(auth,(user)=>{
             if(user){
             setUser(user)
+            setLoading(false)
             }else{
              setUser()
             }
@@ -42,7 +42,9 @@ const UseFirebase=()=>{
     return{
         signinWithGoogle,
         user,
-        logOut
+        logOut,
+        isLoading,
+        setLoading
     }
 
 

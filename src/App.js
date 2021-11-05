@@ -9,8 +9,15 @@ import ContextProvider from './ContextProvider/ContextProvider';
 import { Placeholder } from 'react-bootstrap';
 import PlaceOrder from './components/PlaceOrder/Book';
 import Book from './components/PlaceOrder/Book';
+import UseAuth from './Hooks/UseAuth';
+import PrivateRoute from './PrivateRoute/PrivateRoute';
+import MyBooking from './components/MyBooking/MyBooking';
+import ManageOrder from './components/ManageOrder/ManageOrder';
+import AddTour from './components/AddTour/AddTour';
+
 
 function App() {
+ 
   return (
     <div className="App">
       <ContextProvider>
@@ -26,8 +33,17 @@ function App() {
         <Route path='/login'>
           <Login></Login>
         </Route>
-        <Route path='/tours/:id'>
+        <PrivateRoute path='/tours/:id'>
            <Book></Book>
+        </PrivateRoute>
+        <Route path='/myBooking'>
+          <MyBooking></MyBooking>
+        </Route>
+        <Route path='/manageBooking'>
+          <ManageOrder></ManageOrder>
+        </Route>
+        <Route path='/addTour'>
+        <AddTour></AddTour>
         </Route>
       </Switch>
       <Footer></Footer>
