@@ -5,7 +5,7 @@ const WhyTravist = () => {
     return (
         <div className='my-4 container'>
             <h2 className='fw-bold text-danger my-4 '>Why Travisit</h2>
-           <div className='d-flex justify-content-around'>
+           <div className='d-md-flex justify-content-around'>
                <div className='why-text text-start me-2'>
                    <h4 className='fw-bold '>Why should you love travisit</h4>
                    <p>Travel exposes us to different cultures and ancient traditions and through these authentic encounters, we learn to embrace and celebrate both our similarities and our differences. Travel teaches us about humanity and gives us an appreciation, understanding and respect for different points of view and ways of life.</p>

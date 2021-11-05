@@ -77,7 +77,7 @@ const MyBooking = () => {
         <div className='pt-3 pb-5' >
             
             <h3 className='mb-5'>Your booking Review</h3>
-            <div className="container booking-review bg-light p-5">
+            <div className="container booking-review bg-light ">
                  <div className='text-start mb-4'>
                      <h6>hello <span className='text-primary'> {user?.displayName}</span>.you booked these tours </h6>
                    
