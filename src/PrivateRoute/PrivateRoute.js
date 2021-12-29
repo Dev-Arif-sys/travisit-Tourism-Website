@@ -1,10 +1,11 @@
 import React from 'react';
-import { Redirect, Route } from 'react-router';
+import { Redirect, Route,Navigate,useLocation } from 'react-router';
 import UseAuth from '../Hooks/UseAuth';
 import'./PrivateRoute.css'
 
 const PrivateRoute = ({children,...rest}) => {
      const {user,isLoading}=UseAuth()
+     const location=useLocation()
      if(isLoading){
          return(
             <div className='text-center mt-4'>
@@ -13,25 +14,8 @@ const PrivateRoute = ({children,...rest}) => {
          )
      }
    console.log(UseAuth())
-    return (
-        <Route
-        {...rest}
-        render={({ location }) =>
-          user ? (
-            children
-          ) : (
-            <Redirect
-              to={{
-                pathname: "/login",
-                state: { from: location }
-              }}
-            />
-          )
-        }
-      />
-           
+   return user ? children : <Navigate to='/login' state={{from:location}} replace/>
     
-    );
 };
 
 export default PrivateRoute;

@@ -1,5 +1,5 @@
 import React from 'react';
-import { useHistory, useLocation } from 'react-router';
+import { useNavigate, useLocation } from 'react-router';
 import UseAuth from '../../Hooks/UseAuth';
 import UseFirebase from '../../Hooks/UseFirebase';
 import img  from '../../media/img/log-in.jpg'
@@ -9,13 +9,13 @@ const Login = () => {
     const {signinWithGoogle,setLoading}=UseAuth();
     const location=useLocation();
     const redirect_uri=location.state?.from ||"/home"
-    const history=useHistory();
+    const navigate=useNavigate();
     const HandlesigninWithGoogle=()=>{
         signinWithGoogle()
         .then(result=>{
             const user=result.user;
-            console.log(history,redirect_uri)
-            history.push(redirect_uri);
+            
+            navigate(redirect_uri);
             
             
         }).catch(error=>{

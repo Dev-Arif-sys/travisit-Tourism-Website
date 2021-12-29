@@ -1,5 +1,5 @@
 import React,{useState,useEffect} from 'react';
-import { Link ,useHistory} from 'react-router-dom';
+import { Link ,useNavigate} from 'react-router-dom';
 import UseAuth from '../../../Hooks/UseAuth';
 import './Tours.css'
 
@@ -20,10 +20,10 @@ const Tours = () => {
 
     console.log(tours);
   
-    const history=useHistory()
+    const navigate=useNavigate()
 
     const handlePlaceOrder=(id)=>{
-        history.push(`tours/${id}`)
+        navigate(`tours/${id}`)
         setLoading(false)
     }
     if(productLoading){

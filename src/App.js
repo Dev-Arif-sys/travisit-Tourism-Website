@@ -1,7 +1,7 @@
 import logo from './logo.svg';
 import './App.css';
 import Header from './components/Header/Header';
-import { BrowserRouter,Switch,Route } from 'react-router-dom';
+import { BrowserRouter,Routes,Route } from 'react-router-dom';
 import Home from './components/Home/Home';
 import Footer from './components/Footer/Footer';
 import Login from './components/Login/Login';
@@ -23,29 +23,22 @@ function App() {
       <ContextProvider>
       <BrowserRouter>
       <Header></Header>
-      <Switch>
-        <Route exact path='/'>
-         <Home></Home>
-        </Route>
-        <Route path='/home'>
-          <Home></Home>
-        </Route>
-        <Route path='/login'>
-          <Login></Login>
-        </Route>
-        <PrivateRoute path='/tours/:id'>
-           <Book></Book>
-        </PrivateRoute>
-        <Route path='/myBooking'>
-          <MyBooking></MyBooking>
-        </Route>
-        <Route path='/manageBooking'>
-          <ManageOrder></ManageOrder>
-        </Route>
-        <Route path='/addTour'>
-        <AddTour></AddTour>
-        </Route>
-      </Switch>
+      <Routes>
+        <Route exact path='/' element={<Home/>} />
+        
+        <Route path='/home' element={<Home/>} />
+          
+        <Route path='/login' element={<Login/>} />
+         
+        <Route path='/tours/:id' element={<PrivateRoute><Book/></PrivateRoute>} />
+          
+        <Route path='/myBooking' element={<PrivateRoute><MyBooking/></PrivateRoute>} />
+          
+        <Route path='/manageBooking' element={<PrivateRoute><ManageOrder/></PrivateRoute>} />
+          
+        <Route path='/addTour' element={<PrivateRoute><AddTour/></PrivateRoute>}/>
+      
+      </Routes>
       <Footer></Footer>
       </BrowserRouter>
       </ContextProvider>

@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { useForm } from 'react-hook-form';
-import { useHistory, useParams } from 'react-router';
+import { useNavigate, useParams } from 'react-router';
 import UseAuth from '../../Hooks/UseAuth';
 import './Book.css'
 
@@ -21,7 +21,7 @@ const Book = () => {
 
 
     const { register, handleSubmit,reset } = useForm();
-    const history=useHistory();
+    const navigate=useNavigate();
     const onSubmit = data => {
         data['tourKey']=tour.key;
         data['status']='pending'
@@ -37,7 +37,7 @@ const Book = () => {
            
             if(data.insertedId){
                 alert('your booking is done successfully')
-                history.push('/myBooking')
+                navigate('/myBooking')
                 reset();
                
             }

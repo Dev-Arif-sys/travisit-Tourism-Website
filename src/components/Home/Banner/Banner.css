@@ -42,6 +42,7 @@
         padding: 20px 0
     }
     .banner-header{
+        width: 100%;
         font-size: 2.3rem;
     }
     .banner-sub-header{
